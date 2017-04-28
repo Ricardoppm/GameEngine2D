@@ -9,12 +9,16 @@
 #ifndef GLTexture_h
 #define GLTexture_h
 
+#include <epoxy/gl.h>
 #include <OpenGL/gl3.h>
+
+#include <string>
 
 namespace Bengine {
 
     struct GLTexture
     {
+        std::string filePath = "";
         GLuint id;
         int width;
         int height;

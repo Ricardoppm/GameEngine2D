@@ -89,6 +89,18 @@ namespace Bengine {
         createVertexArray();
     }
     
+    void SpriteBatch::dispose()
+    {
+        if (vao_ != 0) {
+            glDeleteVertexArrays(1, &vao_);
+            vao_ = 0;
+        }
+        if (vbo_ != 0) {
+            glDeleteBuffers(1, &vbo_);
+            vbo_ = 0;
+        }
+    }
+    
     void SpriteBatch::begin(GlyphSortType sortType)
     {
         sortType_ = sortType;
@@ -225,6 +237,9 @@ namespace Bengine {
                 
             case GlyphSortType::TEXTURE:
                 std::stable_sort(glyphPointers_.begin(), glyphPointers_.end(), compareTexture);
+                break;
+                
+            default:
                 break;
         }
     }

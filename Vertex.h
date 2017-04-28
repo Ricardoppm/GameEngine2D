@@ -9,6 +9,9 @@
 #ifndef Vertex_h
 #define Vertex_h
 
+#include <epoxy/gl.h>
+
+
 #include <OpenGL/gl3.h>
 
 namespace Bengine {

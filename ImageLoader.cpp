@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ricardo Martins. All rights reserved.
 //
 
+#include <epoxy/gl.h>
+
 #include <OpenGL/gl3.h>
 
 #include "ImageLoader.hpp"
@@ -51,6 +53,7 @@ namespace Bengine {
         
         texture.width = width;
         texture.height = height;
+        texture.filePath = filePath;
         
         return texture;
     }

@@ -9,10 +9,16 @@
 #ifndef Sprite_hpp
 #define Sprite_hpp
 
-#include <OpenGL/gl3.h>
-#include <string>
+
+
 
 #include "GLTexture.h"
+
+#include <epoxy/gl.h>
+
+#include <string>
+#include <OpenGL/gl3.h>
+
 
 namespace Bengine {
     

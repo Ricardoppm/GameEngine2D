@@ -9,6 +9,9 @@
 #ifndef SpriteBatch_hpp
 #define SpriteBatch_hpp
 
+#include <epoxy/gl.h>
+
+
 #include <OpenGL/gl3.h>
 #include <glm/glm.hpp>
 #include <vector>
@@ -61,7 +64,8 @@ namespace Bengine {
         ~SpriteBatch();
         
         void init();
-        
+        void dispose();
+
         void begin(GlyphSortType sortType = GlyphSortType::TEXTURE);
         void end();
         

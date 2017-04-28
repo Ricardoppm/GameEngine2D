@@ -52,7 +52,7 @@ namespace Bengine {
         }
         // Initialize Mixer
         // MIX_INIT_FAC , MIX_INIT_MOD, MIX_INIT_MP3, MIX_INIT_OGG
-        if( Mix_Init(MIX_INIT_MP3 || MIX_INIT_OGG) == -1){
+        if( Mix_Init(MIX_INIT_MP3 | MIX_INIT_OGG) == -1){
             Bengine::fatalError("Mix_init error: " + std::string(Mix_GetError()));
         }
         

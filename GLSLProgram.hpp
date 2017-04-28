@@ -11,7 +11,10 @@
 
 #include <string>
 
+#include <epoxy/gl.h>
+
 #include <OpenGL/gl3.h>
+
 namespace Bengine {
 
     class GLSLProgram
@@ -22,6 +25,8 @@ namespace Bengine {
         
         void compileShaders(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
         
+        void compileShadersFromSource(const char* vertexSource, const char* fragmentSource);
+        
         void linkShaders();
         
         void addAttribute(const std::string& attributeName);
@@ -31,8 +36,10 @@ namespace Bengine {
         void use();
         void unuse();
         
+        void dispose();
+        
     private:
-        void compileShader( const std::string filePath, GLuint id);
+        void compileShader( const char* source, const std::string& name, GLuint id);
         
         int numAttributes_ = 0;
 

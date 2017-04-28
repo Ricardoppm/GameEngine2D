@@ -27,15 +27,19 @@ namespace Bengine {
         
         bool isBoxInView(const glm::vec2& position, const glm::vec2& dimensions);
         
+        void offsetPosition(const glm::vec2& offset) { position_ += offset; needsMatrixUpdate_ = true; }
+        void offsetScale(float offset) { scale_ += offset; if (scale_ < 0.001f) scale_ = 0.001f; needsMatrixUpdate_ = true; }
+        
         // Setters
         void setPosition(const glm::vec2& newPosition){ position_ = newPosition; needsMatrixUpdate_=true; };
         void setScale(float newScale){ scale_ = newScale; needsMatrixUpdate_=true; }
         
         
         // Getters
-        glm::vec2 getPosition(){ return position_;}
-        float getScale(){ return scale_;}
-        glm::mat4 getCameraMatrix(){ return cameraMatrix_;}
+        const glm::vec2& getPosition() const { return position_; }
+        float getScale() const { return scale_; }
+        const glm::mat4& getCameraMatrix() const { return cameraMatrix_; }
+        float getAspectRatio() const { return (float)screenWidth_ / (float)screenHeight_; }
         
     private:
         int screenWidth_ = 500;

@@ -9,6 +9,8 @@
 #ifndef Window_hpp
 #define Window_hpp
 
+#include <epoxy/gl.h>
+
 #include <SDL2/SDL.h>
 #include <OpenGL/gl3.h>
 #include <string>

@@ -10,6 +10,9 @@
 #define Bengine_hpp
 
 #include <SDL2/SDL.h>
+
+#include <epoxy/gl.h>
+
 #include <OpenGL/gl3.h>
 
 namespace Bengine {
